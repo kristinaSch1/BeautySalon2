@@ -1,0 +1,5 @@
+﻿{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=STUDENT24;Database=BeautySalonGlam;Trusted_Connection=true;TrustServerCertificate=true"
+  }
+}
