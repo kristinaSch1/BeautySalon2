@@ -17,6 +17,10 @@ namespace BeautySalon.Controllers
         {
             context = new BeautySalonContext();
         }
+        public ServiceController(BeautySalonContext context)
+        {
+            this.context = context;
+        }
         public async Task AddService(Service s)
         {
             if (s.Price <= 0)

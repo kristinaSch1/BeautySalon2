@@ -17,6 +17,10 @@ namespace BeautySalon.Controllers
         {
             context = new BeautySalonContext();
         }
+        public AppointmentController(BeautySalonContext context)
+        {
+            this.context = context;
+        }
         public async Task<List<Appointment>> GetAppointments()
         {
             if (context.Appointments.Count() == 0)

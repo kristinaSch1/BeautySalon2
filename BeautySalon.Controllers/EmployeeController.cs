@@ -18,6 +18,10 @@ namespace BeautySalon.Controllers
         {
             context = new BeautySalonContext();
         }
+        public EmployeeController(BeautySalonContext context)
+        {
+            this.context = context;
+        }
 
         public async Task AddEmployee(Employee emp, User user)
         {

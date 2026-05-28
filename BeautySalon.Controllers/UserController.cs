@@ -1,5 +1,6 @@
 ﻿using BeautySalon.Data;
 using BeautySalon.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,15 @@ namespace BeautySalon.Controllers
         {
             context = new BeautySalonContext();
         }
-        //BCrypt.NET.Next
+        public UserController(BeautySalonContext context)
+        {
+            this.context = context;
+        }
+        public async Task<List<User>> GetAll()
+        {
+            List<User> users = await context.Users.ToListAsync();
+            return users;
+        }
         public async Task AddUser(User user)
         {
             if (context.Users.Any(x => x.Username == user.Username))

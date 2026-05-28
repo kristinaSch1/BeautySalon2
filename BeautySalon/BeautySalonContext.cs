@@ -11,6 +11,15 @@ namespace BeautySalon.Data
 {
     public class BeautySalonContext : DbContext
     {
+        public BeautySalonContext()
+        {
+            
+        }
+        public BeautySalonContext(DbContextOptions<BeautySalonContext> options)
+            : base(options) 
+        {
+            
+        }
         public DbSet<User> Users { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Employee> Employees { get; set; }
@@ -18,12 +27,15 @@ namespace BeautySalon.Data
         public DbSet<Appointment> Appointments { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var builder = new ConfigurationBuilder();
-            builder.AddJsonFile("connection.json");
-            var config = builder.Build();
+            if (!optionsBuilder.IsConfigured)
+            {
+                var builder = new ConfigurationBuilder();
+                builder.AddJsonFile("connection.json");
+                var config = builder.Build();
 
-            string conString = config.GetConnectionString("DefaultConnection");
-            optionsBuilder.UseSqlServer(conString); 
+                string conString = config.GetConnectionString("DefaultConnection");
+                optionsBuilder.UseSqlServer(conString);
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

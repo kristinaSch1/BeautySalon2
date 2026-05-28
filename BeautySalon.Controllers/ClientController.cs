@@ -17,7 +17,10 @@ namespace BeautySalon.Controllers
         {
             context = new BeautySalonContext();
         }
-
+        public ClientController(BeautySalonContext context)
+        {
+            this.context = context;
+        }
         public async Task AddClient(Client client, User user)
         {
             if (context.Users.Any(x => x.Username == user.Username))
