@@ -47,7 +47,7 @@
             button1.BackColor = Color.PaleVioletRed;
             button1.Font = new Font("Mongolian Baiti", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(530, 571);
+            button1.Location = new Point(522, 570);
             button1.Name = "button1";
             button1.Size = new Size(119, 52);
             button1.TabIndex = 1;

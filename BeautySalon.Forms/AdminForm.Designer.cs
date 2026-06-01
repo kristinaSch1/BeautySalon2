@@ -40,7 +40,6 @@
             button12 = new Button();
             button13 = new Button();
             button14 = new Button();
-            button3 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -98,7 +97,7 @@
             button10.BackColor = Color.PaleVioletRed;
             button10.Font = new Font("Mongolian Baiti", 14F);
             button10.ForeColor = SystemColors.ButtonHighlight;
-            button10.Location = new Point(589, 403);
+            button10.Location = new Point(686, 394);
             button10.Name = "button10";
             button10.Size = new Size(198, 74);
             button10.TabIndex = 9;
@@ -137,7 +136,7 @@
             button7.BackColor = Color.PaleVioletRed;
             button7.Font = new Font("Mongolian Baiti", 14F);
             button7.ForeColor = SystemColors.ButtonHighlight;
-            button7.Location = new Point(357, 403);
+            button7.Location = new Point(454, 394);
             button7.Name = "button7";
             button7.Size = new Size(198, 74);
             button7.TabIndex = 6;
@@ -163,7 +162,7 @@
             button12.BackColor = Color.PaleVioletRed;
             button12.Font = new Font("Mongolian Baiti", 14F);
             button12.ForeColor = SystemColors.ButtonHighlight;
-            button12.Location = new Point(129, 403);
+            button12.Location = new Point(226, 394);
             button12.Name = "button12";
             button12.Size = new Size(198, 74);
             button12.TabIndex = 11;
@@ -197,25 +196,12 @@
             button14.UseVisualStyleBackColor = false;
             button14.Click += button14_Click;
             // 
-            // button3
-            // 
-            button3.BackColor = Color.PaleVioletRed;
-            button3.Font = new Font("Mongolian Baiti", 14F);
-            button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(818, 403);
-            button3.Name = "button3";
-            button3.Size = new Size(198, 74);
-            button3.TabIndex = 14;
-            button3.Text = "See appointments for employee";
-            button3.UseVisualStyleBackColor = false;
-            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightPink;
             ClientSize = new Size(1154, 665);
-            Controls.Add(button3);
             Controls.Add(button14);
             Controls.Add(button13);
             Controls.Add(button12);
@@ -248,6 +234,5 @@
         private Button button12;
         private Button button13;
         private Button button14;
-        private Button button3;
     }
 }

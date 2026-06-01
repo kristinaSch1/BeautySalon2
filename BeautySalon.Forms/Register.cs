@@ -132,7 +132,7 @@ namespace BeautySalon.Forms
                 }
                 else if(label9.Visible == false)
                 {
-                    if (string.IsNullOrWhiteSpace(comboBox1.SelectedItem.ToString()))
+                    if (comboBox1.SelectedItem == null)
                     {
                         MessageBox.Show("Choose a specialty!");
                         return;
