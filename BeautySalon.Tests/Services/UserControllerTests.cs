@@ -21,10 +21,11 @@ namespace BeautySalon.Tests.Services
                 Username = "kpetrovvaa",
                 Password = "kp22"
             };
-
-            await context.SaveChangesAsync();
             UserController userController = new UserController(context);
             await userController.AddUser(user);
+            var users = await userController.GetAll();
+            int count = users.Count();
+            Assert.AreEqual(2, count);
         }
     }
 }

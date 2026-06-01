@@ -66,7 +66,7 @@ namespace BeautySalon.Controllers
         {
             if (id < 1)
                 throw new ArgumentException("Id is always a positive number!");
-            if (!context.Employees.Any(x => x.Id == id))
+            if (!context.Services.Any(x => x.Id == id))
                 throw new ArgumentException("No service with the given id!");
 
             Service s = context.Services.First(x => x.Id == id);

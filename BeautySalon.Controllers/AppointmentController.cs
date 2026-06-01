@@ -32,6 +32,17 @@ namespace BeautySalon.Controllers
                 .Include(x => x.Service)
                 .ToListAsync();
         }
+        public async Task DeleteAppById(int id)
+        {
+            if (id < 1)
+                throw new ArgumentException("Id is always a positive number!");
+            if (!context.Appointments.Any(x => x.Id == id))
+                throw new ArgumentException("No appointment with the given id!");
+
+            Appointment app = context.Appointments.First(x => x.Id == id);
+            context.Appointments.Remove(app);
+            await context.SaveChangesAsync();
+        }
         public async Task AddAppointment(Appointment app)
         {
             if (app.ClientId < 1 || app.ServiceId < 1 || app.EmployeeId < 1)
@@ -69,22 +80,59 @@ namespace BeautySalon.Controllers
             return apps;
         }
 
-        //public async Task<List<Appointment>> GetAvailabelAppointmentsForEmployee(int empId)
-        //{
-        //    List<int> hours = new List<int> { 9, 10, 11, 12, 13, 14, 15, 16, 17 };
-        //    List<Appointment> apps = context.Appointments
-        //        .Include(x => x.Service)
-        //        .Where(x => x.EmployeeId == empId)
-        //        .ToList();
-        //    List<int> unavailable = new List<int>();
-        //    for (int i = 0; i < apps.Count; i++)
-        //    {
-        //        for (int j = 0; j < apps[i].Service.Duration; j++)
-        //        {
-        //            unavailable.Add(apps[i].Time.Hour + j);
-        //        }
-        //    }
+        public async Task<List<int>> GetAvailabelAppointmentsForEmployee
+            (int empId, DateTime date)
+        {
+            List<Appointment> apps = context.Appointments
+                .Include(x => x.Service)
+                .Where(x => x.EmployeeId == empId && x.Time.Year == date.Year 
+                && x.Time.Month == date.Month && x.Time.Day == date.Day)
+                .ToList();
+            List<int> unavailable = new List<int>();
+            for (int i = 0; i < apps.Count; i++)
+            {
+                for (int j = 0; j < apps[i].Service.Duration; j++)
+                {
+                    unavailable.Add(apps[i].Time.Hour + j);
+                }
+            }
+            List<int> available = new List<int>();
+            for (int i = 9; i < 18; i++)
+            {
+                if (!unavailable.Contains(i))
+                    available.Add(i);
+            }
+            return available;
+        }
 
-        //}
+        public async Task<List<int>> GetAvailableAppsForService
+            (int empId, DateTime date, Service service)
+        {
+            List<int> times = await GetAvailabelAppointmentsForEmployee(empId, date);
+            List<int> available = new List<int>();
+            for (int i = 0; i < times.Count; i++)
+            {
+                bool isAv = true;
+                for (int j = 0; j < service.Duration; j++)
+                {
+                    if (!times.Contains(times[i] + j))
+                    {
+                        isAv = false;
+                        break;
+                    }
+                }
+                if (isAv)
+                {
+                    available.Add(times[i]);
+                }
+            }
+
+            if(available.Count == 0)
+            {
+                throw new ArgumentException("No available times!");
+            }
+
+            return available;
+        }
     }
 }

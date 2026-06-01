@@ -36,7 +36,7 @@ namespace BeautySalon.Forms
                     listBox1.Items.Add($"{emp.Id}. {emp.FirstName} {emp.LastName}");
                 }
             }
-            else if(Option == "Service")
+            else if (Option == "Service")
             {
                 List<Service> services = await serviceController.GetServices();
                 foreach (Service s in services)
@@ -50,30 +50,40 @@ namespace BeautySalon.Forms
         {
             EmployeeController employeeController = new EmployeeController();
             ServiceController serviceController = new ServiceController();
-            try
+            DialogResult res = MessageBox.Show("Are you sure?", "Confirmation",
+                MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
             {
-                if (Option == "Employee")
+                try
                 {
-                    int index = listBox1.SelectedIndex;
-                    List<Employee> emps = await employeeController.GetEmployees();
-                    Employee emp = emps[index];
-                    await employeeController.DeleteEmployeeById(emp.Id);
-                    DialogResult = DialogResult.OK;
+                    if (Option == "Employee")
+                    {
+                        int index = listBox1.SelectedIndex;
+                        List<Employee> emps = await employeeController.GetEmployees();
+                        Employee emp = emps[index];
+                        await employeeController.DeleteEmployeeById(emp.Id);
+                        DialogResult = DialogResult.OK;
+                    }
+                    else if (Option == "Service")
+                    {
+                        int index = listBox1.SelectedIndex;
+                        List<Service> services = await serviceController.GetServices();
+                        Service s = services[index];
+                        await serviceController.DeleteServiceById(s.Id);
+                        DialogResult = DialogResult.OK;
+                    }
                 }
-                else if(Option == "Service")
+                catch (Exception ex)
                 {
-                    int index = listBox1.SelectedIndex;
-                    List<Service> services = await serviceController.GetServices();
-                    Service s = services[index];
-                    await serviceController.DeleteServiceById(s.Id);
-                    DialogResult = DialogResult.OK;
+                    MessageBox.Show(ex.Message);
+                    return;
                 }
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return;
-            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

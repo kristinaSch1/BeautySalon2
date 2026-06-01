@@ -30,10 +30,12 @@
         {
             button1 = new Button();
             button2 = new Button();
-            richTextBox1 = new RichTextBox();
             groupBox1 = new GroupBox();
-            radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
+            radioButton1 = new RadioButton();
+            dateTimePicker1 = new DateTimePicker();
+            button6 = new Button();
+            listBox1 = new ListBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -42,7 +44,7 @@
             button1.BackColor = Color.PaleVioletRed;
             button1.Font = new Font("Mongolian Baiti", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(176, 421);
+            button1.Location = new Point(189, 380);
             button1.Name = "button1";
             button1.Size = new Size(143, 46);
             button1.TabIndex = 0;
@@ -61,38 +63,16 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
-            // richTextBox1
-            // 
-            richTextBox1.Location = new Point(561, 86);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.ReadOnly = true;
-            richTextBox1.Size = new Size(408, 500);
-            richTextBox1.TabIndex = 2;
-            richTextBox1.Text = "";
-            // 
             // groupBox1
             // 
             groupBox1.BackColor = Color.LightPink;
             groupBox1.Controls.Add(radioButton2);
             groupBox1.Controls.Add(radioButton1);
-            groupBox1.Location = new Point(164, 238);
+            groupBox1.Location = new Point(168, 251);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(178, 100);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
-            // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Font = new Font("Mongolian Baiti", 12F);
-            radioButton1.ForeColor = Color.DarkRed;
-            radioButton1.Location = new Point(21, 26);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(93, 25);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Booked";
-            radioButton1.UseVisualStyleBackColor = true;
             // 
             // radioButton2
             // 
@@ -107,14 +87,61 @@
             radioButton2.Text = "Available";
             radioButton2.UseVisualStyleBackColor = true;
             // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Font = new Font("Mongolian Baiti", 12F);
+            radioButton1.ForeColor = Color.DarkRed;
+            radioButton1.Location = new Point(21, 26);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(93, 25);
+            radioButton1.TabIndex = 0;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Booked";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Font = new Font("Segoe UI", 12F);
+            dateTimePicker1.Location = new Point(81, 180);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(360, 34);
+            dateTimePicker1.TabIndex = 4;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.PaleVioletRed;
+            button6.Font = new Font("Mongolian Baiti", 12F);
+            button6.ForeColor = Color.White;
+            button6.Location = new Point(189, 462);
+            button6.Name = "button6";
+            button6.Size = new Size(142, 50);
+            button6.TabIndex = 7;
+            button6.Text = "Cancel app";
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
+            // 
+            // listBox1
+            // 
+            listBox1.Font = new Font("Segoe UI", 12F);
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 28;
+            listBox1.Location = new Point(607, 82);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(393, 480);
+            listBox1.TabIndex = 8;
+            listBox1.Visible = false;
+            // 
             // EmployeeForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightPink;
             ClientSize = new Size(1123, 676);
+            Controls.Add(listBox1);
+            Controls.Add(button6);
+            Controls.Add(dateTimePicker1);
             Controls.Add(groupBox1);
-            Controls.Add(richTextBox1);
             Controls.Add(button2);
             Controls.Add(button1);
             Name = "EmployeeForm";
@@ -129,9 +156,11 @@
 
         private Button button1;
         private Button button2;
-        private RichTextBox richTextBox1;
         private GroupBox groupBox1;
         private RadioButton radioButton2;
         private RadioButton radioButton1;
+        private DateTimePicker dateTimePicker1;
+        private Button button6;
+        private ListBox listBox1;
     }
 }

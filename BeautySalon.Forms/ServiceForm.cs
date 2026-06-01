@@ -112,6 +112,7 @@ namespace BeautySalon.Forms
         private void ServiceForm_Load(object sender, EventArgs e)
         {
             comboBox1.DataSource = Enum.GetValues(typeof(CategoryType));
+            comboBox1.SelectedIndex = -1;   
         }
 
         private void button3_Click(object sender, EventArgs e)

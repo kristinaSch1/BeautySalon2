@@ -28,6 +28,7 @@ namespace BeautySalon.Forms
         public string Sender { get; set; }
         private async void button1_Click(object sender, EventArgs e)
         {
+            richTextBox1.Clear();
             EmployeeController employeeController = new EmployeeController();
             ClientController clientController = new ClientController();
             ServiceController serviceController = new ServiceController();
@@ -67,11 +68,23 @@ namespace BeautySalon.Forms
                 }
                 else if(Text == "Services")
                 {
-                    List<Service> services = await serviceController.GetServices();
-                    foreach(Service s in services)
+                    if (Sender == "AdminForm")
                     {
-                        richTextBox1.Text += $"{s.Name} - {s.Description}, {s.Price}, " +
-                            $"{s.Duration}, {s.Category.ToString()} \n";
+                        List<Service> services = await serviceController.GetServices();
+                        foreach (Service s in services)
+                        {
+                            richTextBox1.Text += $"{s.Id}. {s.Name} - {s.Description}, Price: {s.Price}, " +
+                                $"Duration: {s.Duration}, Category: {s.Category.ToString()} \n";
+                        }
+                    }
+                    else if(Sender == "ClientForm")
+                    {
+                        List<Service> services = await serviceController.GetServices();
+                        foreach (Service s in services)
+                        {
+                            richTextBox1.Text += $"{s.Name} - {s.Description}, Price: {s.Price}, " +
+                                $"Duration: {s.Duration}, Category: {s.Category.ToString()} \n";
+                        }
                     }
                 }
                 else if(Text == "Appointments")
@@ -80,8 +93,9 @@ namespace BeautySalon.Forms
                         .GetAppointments();
                     foreach(Appointment app in apps)
                     {
-                        richTextBox1.Text += $"{app.Employee.FirstName}, " +
-                            $"{app.Client.FirstName}, {app.Service.Name}, {app.Time}";
+                        richTextBox1.Text += $"Employee: {app.Employee.FirstName}, " +
+                            $"Client: {app.Client.FirstName}, Service: " +
+                            $"{app.Service.Name}, Time: {app.Time} \n";
                     }
                 }
             }

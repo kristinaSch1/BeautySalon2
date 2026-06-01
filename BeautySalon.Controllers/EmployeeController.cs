@@ -59,6 +59,27 @@ namespace BeautySalon.Controllers
 
             return await context.Employees.ToListAsync();
         }
+        public async Task<List<Appointment>> GetAppointmentsForEmployeeAtDate(int eId, DateTime date)
+        {
+            if (eId < 1)
+                throw new ArgumentException("Id is always a positive number!");
+            if (!context.Employees.Any(x => x.Id == eId))
+                throw new ArgumentException("No employee with the given id!");
+
+            List<Appointment> apps = await context.Appointments
+                .Where(x => x.EmployeeId == eId)
+                .Where(x => x.Time.Year == date.Year && x.Time.Month == date.Month 
+                    && x.Time.Day == date.Day)
+                .Include(x => x.Service)
+                .Include(x => x.Client)
+                .Include(x => x.Employee)
+                .ToListAsync();
+
+            if (apps.Count() == 0)
+                throw new ArgumentException("No appointments!");
+
+            return apps;
+        }
         public async Task<List<Appointment>> GetAppointmentsForEmployee(int eId)
         {
             if (eId < 1)
@@ -121,7 +142,13 @@ namespace BeautySalon.Controllers
                 throw new ArgumentException("Id is always a positive number!");
             if (!context.Employees.Any(x => x.Id == e.Id))
                 throw new ArgumentException("No employee with the given id!");
-            if (context.Users.Any(x => x.Username == e.Username))
+
+            Employee eToUpdate = context.Employees.First(x => x.Id == e.Id);
+            User uToUpdate = context.Users.First(x => x.Username == eToUpdate.Username);
+
+            List<string> usernames = context.Users.Select(x => x.Username).ToList();
+            usernames.Remove(uToUpdate.Username);
+            if (usernames.Any(x => x == e.Username))
                 throw new ArgumentException("This account already exists!");
             if (e.Age < 17)
                 throw new ArgumentException("You must be over 16 to make an account!");
@@ -131,15 +158,15 @@ namespace BeautySalon.Controllers
                 throw new ArgumentException("Invalid email!");
             List<string> emails = context.Clients.Select(x => x.Email).ToList();
             emails.AddRange(context.Employees.Select(x => x.Email).ToList());
+            emails.Remove(eToUpdate.Email);
             if (emails.Contains(e.Email))
                 throw new ArgumentException("There is already an account using this email!");
             List<string> pns = context.Clients.Select(x => x.PhoneNumber).ToList();
             pns.AddRange(context.Employees.Select(x => x.PhoneNumber).ToList());
+            pns.Remove(eToUpdate.PhoneNumber);
             if (pns.Contains(e.PhoneNumber))
                 throw new ArgumentException("There is already an account using this phone number!");
 
-            Employee eToUpdate = context.Employees.First(x => x.Id == e.Id);
-            User uToUpdate = context.Users.First(x => x.Username == e.Username);
             uToUpdate.Username = e.Username;
             uToUpdate.Password = password;
             eToUpdate.FirstName = e.FirstName;

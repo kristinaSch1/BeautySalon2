@@ -34,7 +34,8 @@
             button3 = new Button();
             button4 = new Button();
             button5 = new Button();
-            richTextBox1 = new RichTextBox();
+            button6 = new Button();
+            listBox1 = new ListBox();
             SuspendLayout();
             // 
             // button1
@@ -42,7 +43,7 @@
             button1.BackColor = Color.PaleVioletRed;
             button1.Font = new Font("Mongolian Baiti", 12F);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(183, 151);
+            button1.Location = new Point(183, 107);
             button1.Name = "button1";
             button1.Size = new Size(142, 50);
             button1.TabIndex = 0;
@@ -71,7 +72,7 @@
             button3.BackColor = Color.PaleVioletRed;
             button3.Font = new Font("Mongolian Baiti", 12F);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(183, 244);
+            button3.Location = new Point(183, 200);
             button3.Name = "button3";
             button3.Size = new Size(142, 50);
             button3.TabIndex = 2;
@@ -84,7 +85,7 @@
             button4.BackColor = Color.PaleVioletRed;
             button4.Font = new Font("Mongolian Baiti", 12F);
             button4.ForeColor = Color.White;
-            button4.Location = new Point(183, 324);
+            button4.Location = new Point(183, 280);
             button4.Name = "button4";
             button4.Size = new Size(142, 50);
             button4.TabIndex = 3;
@@ -97,7 +98,7 @@
             button5.BackColor = Color.PaleVioletRed;
             button5.Font = new Font("Mongolian Baiti", 12F);
             button5.ForeColor = Color.White;
-            button5.Location = new Point(183, 410);
+            button5.Location = new Point(183, 366);
             button5.Name = "button5";
             button5.Size = new Size(142, 50);
             button5.TabIndex = 4;
@@ -105,14 +106,30 @@
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 
-            // richTextBox1
+            // button6
             // 
-            richTextBox1.Location = new Point(515, 82);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(399, 444);
-            richTextBox1.TabIndex = 5;
-            richTextBox1.Text = "";
-            richTextBox1.Visible = false;
+            button6.BackColor = Color.PaleVioletRed;
+            button6.Font = new Font("Mongolian Baiti", 12F);
+            button6.ForeColor = Color.White;
+            button6.Location = new Point(183, 450);
+            button6.Name = "button6";
+            button6.Size = new Size(142, 50);
+            button6.TabIndex = 6;
+            button6.Text = "Cancel app";
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
+            // 
+            // listBox1
+            // 
+            listBox1.Font = new Font("Segoe UI", 11F);
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 25;
+            listBox1.Location = new Point(581, 98);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(342, 404);
+            listBox1.TabIndex = 7;
+            listBox1.Visible = false;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // ClientForm
             // 
@@ -120,7 +137,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightPink;
             ClientSize = new Size(1068, 620);
-            Controls.Add(richTextBox1);
+            Controls.Add(listBox1);
+            Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
@@ -139,6 +157,7 @@
         private Button button3;
         private Button button4;
         private Button button5;
-        private RichTextBox richTextBox1;
+        private Button button6;
+        private ListBox listBox1;
     }
 }

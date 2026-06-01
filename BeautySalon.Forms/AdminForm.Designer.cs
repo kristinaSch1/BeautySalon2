@@ -30,7 +30,6 @@
         {
             button1 = new Button();
             button2 = new Button();
-            button3 = new Button();
             button4 = new Button();
             button5 = new Button();
             button10 = new Button();
@@ -38,20 +37,20 @@
             button8 = new Button();
             button7 = new Button();
             button6 = new Button();
-            button11 = new Button();
             button12 = new Button();
             button13 = new Button();
             button14 = new Button();
+            button3 = new Button();
             SuspendLayout();
             // 
             // button1
             // 
             button1.BackColor = Color.PaleVioletRed;
-            button1.Font = new Font("Mongolian Baiti", 12F);
+            button1.Font = new Font("Mongolian Baiti", 14F);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(99, 82);
+            button1.Location = new Point(129, 171);
             button1.Name = "button1";
-            button1.Size = new Size(152, 58);
+            button1.Size = new Size(198, 74);
             button1.TabIndex = 0;
             button1.Text = "Add employee";
             button1.UseVisualStyleBackColor = false;
@@ -60,36 +59,24 @@
             // button2
             // 
             button2.BackColor = Color.PaleVioletRed;
-            button2.Font = new Font("Mongolian Baiti", 12F);
+            button2.Font = new Font("Mongolian Baiti", 14F);
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(99, 150);
+            button2.Location = new Point(129, 285);
             button2.Name = "button2";
-            button2.Size = new Size(152, 58);
+            button2.Size = new Size(198, 74);
             button2.TabIndex = 1;
             button2.Text = "Add admin";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
-            // button3
-            // 
-            button3.BackColor = Color.PaleVioletRed;
-            button3.Font = new Font("Mongolian Baiti", 12F);
-            button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(99, 220);
-            button3.Name = "button3";
-            button3.Size = new Size(152, 58);
-            button3.TabIndex = 2;
-            button3.Text = "Remove employee";
-            button3.UseVisualStyleBackColor = false;
-            // 
             // button4
             // 
             button4.BackColor = Color.PaleVioletRed;
-            button4.Font = new Font("Mongolian Baiti", 12F);
+            button4.Font = new Font("Mongolian Baiti", 14F);
             button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Location = new Point(99, 292);
+            button4.Location = new Point(357, 172);
             button4.Name = "button4";
-            button4.Size = new Size(152, 58);
+            button4.Size = new Size(198, 74);
             button4.TabIndex = 3;
             button4.Text = "See employees";
             button4.UseVisualStyleBackColor = false;
@@ -109,11 +96,11 @@
             // button10
             // 
             button10.BackColor = Color.PaleVioletRed;
-            button10.Font = new Font("Mongolian Baiti", 12F);
+            button10.Font = new Font("Mongolian Baiti", 14F);
             button10.ForeColor = SystemColors.ButtonHighlight;
-            button10.Location = new Point(302, 220);
+            button10.Location = new Point(589, 403);
             button10.Name = "button10";
-            button10.Size = new Size(152, 58);
+            button10.Size = new Size(198, 74);
             button10.TabIndex = 9;
             button10.Text = "Update service";
             button10.UseVisualStyleBackColor = false;
@@ -122,11 +109,11 @@
             // button9
             // 
             button9.BackColor = Color.PaleVioletRed;
-            button9.Font = new Font("Mongolian Baiti", 12F);
+            button9.Font = new Font("Mongolian Baiti", 14F);
             button9.ForeColor = SystemColors.ButtonHighlight;
-            button9.Location = new Point(302, 150);
+            button9.Location = new Point(589, 285);
             button9.Name = "button9";
-            button9.Size = new Size(152, 58);
+            button9.Size = new Size(198, 74);
             button9.TabIndex = 8;
             button9.Text = "Add service";
             button9.UseVisualStyleBackColor = false;
@@ -135,11 +122,11 @@
             // button8
             // 
             button8.BackColor = Color.PaleVioletRed;
-            button8.Font = new Font("Mongolian Baiti", 12F);
+            button8.Font = new Font("Mongolian Baiti", 14F);
             button8.ForeColor = SystemColors.ButtonHighlight;
-            button8.Location = new Point(302, 82);
+            button8.Location = new Point(589, 172);
             button8.Name = "button8";
-            button8.Size = new Size(152, 58);
+            button8.Size = new Size(198, 74);
             button8.TabIndex = 7;
             button8.Text = "See services";
             button8.UseVisualStyleBackColor = false;
@@ -148,11 +135,11 @@
             // button7
             // 
             button7.BackColor = Color.PaleVioletRed;
-            button7.Font = new Font("Mongolian Baiti", 12F);
+            button7.Font = new Font("Mongolian Baiti", 14F);
             button7.ForeColor = SystemColors.ButtonHighlight;
-            button7.Location = new Point(99, 429);
+            button7.Location = new Point(357, 403);
             button7.Name = "button7";
-            button7.Size = new Size(152, 58);
+            button7.Size = new Size(198, 74);
             button7.TabIndex = 6;
             button7.Text = "See appointments";
             button7.UseVisualStyleBackColor = false;
@@ -161,36 +148,24 @@
             // button6
             // 
             button6.BackColor = Color.PaleVioletRed;
-            button6.Font = new Font("Mongolian Baiti", 12F);
+            button6.Font = new Font("Mongolian Baiti", 14F);
             button6.ForeColor = SystemColors.ButtonHighlight;
-            button6.Location = new Point(99, 365);
+            button6.Location = new Point(357, 285);
             button6.Name = "button6";
-            button6.Size = new Size(152, 58);
+            button6.Size = new Size(198, 74);
             button6.TabIndex = 5;
             button6.Text = "See clients";
             button6.UseVisualStyleBackColor = false;
             button6.Click += button6_Click;
             // 
-            // button11
-            // 
-            button11.BackColor = Color.PaleVioletRed;
-            button11.Font = new Font("Mongolian Baiti", 12F);
-            button11.ForeColor = SystemColors.ButtonHighlight;
-            button11.Location = new Point(302, 292);
-            button11.Name = "button11";
-            button11.Size = new Size(152, 58);
-            button11.TabIndex = 10;
-            button11.Text = "Remove service";
-            button11.UseVisualStyleBackColor = false;
-            // 
             // button12
             // 
             button12.BackColor = Color.PaleVioletRed;
-            button12.Font = new Font("Mongolian Baiti", 12F);
+            button12.Font = new Font("Mongolian Baiti", 14F);
             button12.ForeColor = SystemColors.ButtonHighlight;
-            button12.Location = new Point(302, 365);
+            button12.Location = new Point(129, 403);
             button12.Name = "button12";
-            button12.Size = new Size(152, 58);
+            button12.Size = new Size(198, 74);
             button12.TabIndex = 11;
             button12.Text = "Remove employee";
             button12.UseVisualStyleBackColor = false;
@@ -199,11 +174,11 @@
             // button13
             // 
             button13.BackColor = Color.PaleVioletRed;
-            button13.Font = new Font("Mongolian Baiti", 12F);
+            button13.Font = new Font("Mongolian Baiti", 14F);
             button13.ForeColor = SystemColors.ButtonHighlight;
-            button13.Location = new Point(302, 429);
+            button13.Location = new Point(818, 171);
             button13.Name = "button13";
-            button13.Size = new Size(152, 58);
+            button13.Size = new Size(198, 74);
             button13.TabIndex = 12;
             button13.Text = "Remove service";
             button13.UseVisualStyleBackColor = false;
@@ -212,15 +187,27 @@
             // button14
             // 
             button14.BackColor = Color.PaleVioletRed;
-            button14.Font = new Font("Mongolian Baiti", 12F);
+            button14.Font = new Font("Mongolian Baiti", 14F);
             button14.ForeColor = SystemColors.ButtonHighlight;
-            button14.Location = new Point(511, 82);
+            button14.Location = new Point(818, 285);
             button14.Name = "button14";
-            button14.Size = new Size(152, 58);
+            button14.Size = new Size(198, 74);
             button14.TabIndex = 13;
             button14.Text = "Update employee";
             button14.UseVisualStyleBackColor = false;
             button14.Click += button14_Click;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.PaleVioletRed;
+            button3.Font = new Font("Mongolian Baiti", 14F);
+            button3.ForeColor = SystemColors.ButtonHighlight;
+            button3.Location = new Point(818, 403);
+            button3.Name = "button3";
+            button3.Size = new Size(198, 74);
+            button3.TabIndex = 14;
+            button3.Text = "See appointments for employee";
+            button3.UseVisualStyleBackColor = false;
             // 
             // AdminForm
             // 
@@ -228,10 +215,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightPink;
             ClientSize = new Size(1154, 665);
+            Controls.Add(button3);
             Controls.Add(button14);
             Controls.Add(button13);
             Controls.Add(button12);
-            Controls.Add(button11);
             Controls.Add(button10);
             Controls.Add(button9);
             Controls.Add(button5);
@@ -241,7 +228,6 @@
             Controls.Add(button4);
             Controls.Add(button6);
             Controls.Add(button1);
-            Controls.Add(button3);
             Name = "AdminForm";
             Text = "AdminForm";
             Load += AdminForm_Load;
@@ -252,7 +238,6 @@
 
         private Button button1;
         private Button button2;
-        private Button button3;
         private Button button4;
         private Button button5;
         private Button button8;
@@ -260,9 +245,9 @@
         private Button button6;
         private Button button9;
         private Button button10;
-        private Button button11;
         private Button button12;
         private Button button13;
         private Button button14;
+        private Button button3;
     }
 }
