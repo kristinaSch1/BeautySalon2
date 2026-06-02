@@ -71,6 +71,11 @@ namespace BeautySalon.Forms
             Employee emp = (Employee)comboBox2.SelectedItem;
             Service service = (Service)comboBox3.SelectedItem;
             DateTime date = dateTimePicker1.Value;
+            if(date < DateTime.Now)
+            {
+                MessageBox.Show("Invalid date!");
+                return;
+            }
             AppointmentController appointmentController = new AppointmentController();
             try
             {
@@ -106,7 +111,7 @@ namespace BeautySalon.Forms
             DateTime date2 = new DateTime(date.Year, date.Month, date.Day, time, 0, 0);
             Appointment app = new Appointment
             {
-                ClientId = 1,
+                ClientId = Client.Id,
                 EmployeeId = emp.Id,
                 ServiceId = service.Id,
                 Time = date2

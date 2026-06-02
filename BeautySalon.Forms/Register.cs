@@ -47,6 +47,7 @@ namespace BeautySalon.Forms
             {
                 label9.Visible = true;
                 textBox8.Visible = true;
+                button1.Text = "Update";
             }
         }
 

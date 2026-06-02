@@ -173,6 +173,7 @@
             textBox7.Font = new Font("Mongolian Baiti", 13.8F);
             textBox7.Location = new Point(531, 402);
             textBox7.Name = "textBox7";
+            textBox7.PasswordChar = '*';
             textBox7.Size = new Size(154, 34);
             textBox7.TabIndex = 13;
             // 

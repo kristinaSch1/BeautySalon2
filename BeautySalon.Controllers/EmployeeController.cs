@@ -133,6 +133,8 @@ namespace BeautySalon.Controllers
                 throw new ArgumentException("No employee with the given id!");
 
             Employee emp = context.Employees.First(x => x.Id == id);
+            User user = context.Users.First(x => x.Username == emp.Username);
+            context.Users.Remove(user);
             context.Employees.Remove(emp);
             await context.SaveChangesAsync();
         }
@@ -153,7 +155,7 @@ namespace BeautySalon.Controllers
             if (e.Age < 17)
                 throw new ArgumentException("You must be over 16 to make an account!");
             if (e.PhoneNumber.Any(x => !char.IsDigit(x)))
-                throw new ArgumentException("Invalid phonenumber!");
+                throw new ArgumentException("Invalid phone number!");
             if (!e.Email.Contains('@'))
                 throw new ArgumentException("Invalid email!");
             List<string> emails = context.Clients.Select(x => x.Email).ToList();

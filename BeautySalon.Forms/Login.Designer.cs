@@ -62,6 +62,7 @@
             textBox2.Font = new Font("Mongolian Baiti", 13.8F);
             textBox2.Location = new Point(526, 233);
             textBox2.Name = "textBox2";
+            textBox2.PasswordChar = '*';
             textBox2.Size = new Size(196, 34);
             textBox2.TabIndex = 2;
             // 
