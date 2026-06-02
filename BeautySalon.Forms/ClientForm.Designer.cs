@@ -58,7 +58,7 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.LightPink;
+            button2.BackColor = Color.Pink;
             button2.Location = new Point(938, 561);
             button2.Name = "button2";
             button2.Size = new Size(118, 47);
@@ -121,12 +121,12 @@
             // 
             // listBox1
             // 
-            listBox1.Font = new Font("Segoe UI", 11F);
+            listBox1.Font = new Font("Segoe UI", 12F);
             listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 25;
-            listBox1.Location = new Point(581, 98);
+            listBox1.ItemHeight = 28;
+            listBox1.Location = new Point(572, 89);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(342, 404);
+            listBox1.Size = new Size(360, 452);
             listBox1.TabIndex = 7;
             listBox1.Visible = false;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
@@ -136,6 +136,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightPink;
+            BackgroundImage = Properties.Resources.Screenshot_2026_06_02_at_09_01_32_Create_rawpixel;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1068, 620);
             Controls.Add(listBox1);
             Controls.Add(button6);
@@ -144,6 +146,7 @@
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
+            DoubleBuffered = true;
             Name = "ClientForm";
             Text = "ClientForm";
             ResumeLayout(false);

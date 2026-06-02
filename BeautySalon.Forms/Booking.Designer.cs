@@ -46,7 +46,7 @@
             // 
             comboBox1.Font = new Font("Segoe UI", 11F);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(238, 142);
+            comboBox1.Location = new Point(238, 146);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(293, 33);
             comboBox1.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             comboBox2.Font = new Font("Segoe UI", 11F);
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(238, 181);
+            comboBox2.Location = new Point(238, 191);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(293, 33);
             comboBox2.TabIndex = 1;
@@ -66,7 +66,7 @@
             // 
             comboBox3.Font = new Font("Segoe UI", 11F);
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(238, 220);
+            comboBox3.Location = new Point(238, 233);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(293, 33);
             comboBox3.TabIndex = 2;
@@ -97,37 +97,40 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Mongolian Baiti", 16F);
+            label1.BackColor = Color.Pink;
+            label1.Font = new Font("Mongolian Baiti", 18F);
             label1.Location = new Point(96, 146);
             label1.Name = "label1";
-            label1.Size = new Size(122, 29);
+            label1.Size = new Size(131, 31);
             label1.TabIndex = 5;
             label1.Text = "Category:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Mongolian Baiti", 16F);
+            label2.BackColor = Color.Pink;
+            label2.Font = new Font("Mongolian Baiti", 18F);
             label2.Location = new Point(86, 189);
             label2.Name = "label2";
-            label2.Size = new Size(132, 29);
+            label2.Size = new Size(142, 31);
             label2.TabIndex = 6;
             label2.Text = "Employee:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Mongolian Baiti", 16F);
-            label3.Location = new Point(115, 224);
+            label3.BackColor = Color.Pink;
+            label3.Font = new Font("Mongolian Baiti", 18F);
+            label3.Location = new Point(116, 235);
             label3.Name = "label3";
-            label3.Size = new Size(103, 29);
+            label3.Size = new Size(111, 31);
             label3.TabIndex = 7;
             label3.Text = "Service:";
             // 
             // dateTimePicker1
             // 
             dateTimePicker1.Font = new Font("Segoe UI", 11F);
-            dateTimePicker1.Location = new Point(238, 260);
+            dateTimePicker1.Location = new Point(238, 274);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(293, 32);
             dateTimePicker1.TabIndex = 8;
@@ -135,10 +138,11 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Mongolian Baiti", 16F);
-            label4.Location = new Point(145, 263);
+            label4.BackColor = Color.Pink;
+            label4.Font = new Font("Mongolian Baiti", 18F);
+            label4.Location = new Point(148, 275);
             label4.Name = "label4";
-            label4.Size = new Size(73, 29);
+            label4.Size = new Size(78, 31);
             label4.TabIndex = 9;
             label4.Text = "Date:";
             // 
@@ -158,7 +162,7 @@
             // 
             // button3
             // 
-            button3.BackColor = Color.LightPink;
+            button3.BackColor = Color.Pink;
             button3.Location = new Point(1030, 661);
             button3.Name = "button3";
             button3.Size = new Size(97, 33);
@@ -172,6 +176,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightPink;
+            BackgroundImage = Properties.Resources.Screenshot_2026_06_02_at_09_01_32_Create_rawpixel;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1130, 695);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -185,6 +191,7 @@
             Controls.Add(comboBox3);
             Controls.Add(comboBox2);
             Controls.Add(comboBox1);
+            DoubleBuffered = true;
             Name = "Booking";
             Text = "Booking";
             Load += Booking_Load;

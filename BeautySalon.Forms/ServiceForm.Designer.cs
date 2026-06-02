@@ -47,8 +47,9 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Mongolian Baiti", 16F);
-            label1.Location = new Point(239, 102);
+            label1.Location = new Point(211, 117);
             label1.Name = "label1";
             label1.Size = new Size(44, 29);
             label1.TabIndex = 0;
@@ -58,8 +59,9 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Mongolian Baiti", 16F);
-            label2.Location = new Point(198, 145);
+            label2.Location = new Point(170, 160);
             label2.Name = "label2";
             label2.Size = new Size(85, 29);
             label2.TabIndex = 1;
@@ -68,8 +70,9 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Mongolian Baiti", 16F);
-            label3.Location = new Point(206, 193);
+            label3.Location = new Point(178, 208);
             label3.Name = "label3";
             label3.Size = new Size(77, 29);
             label3.TabIndex = 2;
@@ -78,8 +81,9 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Mongolian Baiti", 16F);
-            label4.Location = new Point(132, 240);
+            label4.Location = new Point(104, 255);
             label4.Name = "label4";
             label4.Size = new Size(151, 29);
             label4.TabIndex = 3;
@@ -88,8 +92,9 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
             label5.Font = new Font("Mongolian Baiti", 16F);
-            label5.Location = new Point(163, 283);
+            label5.Location = new Point(135, 298);
             label5.Name = "label5";
             label5.Size = new Size(120, 29);
             label5.TabIndex = 4;
@@ -98,8 +103,9 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
             label6.Font = new Font("Mongolian Baiti", 16F);
-            label6.Location = new Point(161, 326);
+            label6.Location = new Point(133, 341);
             label6.Name = "label6";
             label6.Size = new Size(122, 29);
             label6.TabIndex = 5;
@@ -108,7 +114,7 @@
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 11F);
-            textBox1.Location = new Point(320, 99);
+            textBox1.Location = new Point(292, 114);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(188, 32);
             textBox1.TabIndex = 6;
@@ -117,7 +123,7 @@
             // textBox2
             // 
             textBox2.Font = new Font("Segoe UI", 11F);
-            textBox2.Location = new Point(320, 142);
+            textBox2.Location = new Point(292, 157);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(188, 32);
             textBox2.TabIndex = 7;
@@ -125,7 +131,7 @@
             // textBox3
             // 
             textBox3.Font = new Font("Segoe UI", 11F);
-            textBox3.Location = new Point(320, 190);
+            textBox3.Location = new Point(292, 205);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(188, 32);
             textBox3.TabIndex = 8;
@@ -133,7 +139,7 @@
             // textBox4
             // 
             textBox4.Font = new Font("Segoe UI", 11F);
-            textBox4.Location = new Point(320, 237);
+            textBox4.Location = new Point(292, 252);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(188, 32);
             textBox4.TabIndex = 9;
@@ -141,7 +147,7 @@
             // textBox5
             // 
             textBox5.Font = new Font("Segoe UI", 11F);
-            textBox5.Location = new Point(320, 280);
+            textBox5.Location = new Point(292, 295);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(188, 32);
             textBox5.TabIndex = 10;
@@ -150,7 +156,7 @@
             // 
             comboBox1.Font = new Font("Segoe UI", 11F);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(320, 322);
+            comboBox1.Location = new Point(292, 337);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(188, 33);
             comboBox1.TabIndex = 11;
@@ -160,7 +166,7 @@
             button1.BackColor = Color.PaleVioletRed;
             button1.Font = new Font("Mongolian Baiti", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(296, 405);
+            button1.Location = new Point(268, 420);
             button1.Name = "button1";
             button1.Size = new Size(120, 47);
             button1.TabIndex = 12;
@@ -170,8 +176,8 @@
             // 
             // button3
             // 
-            button3.BackColor = Color.LightPink;
-            button3.Location = new Point(999, 612);
+            button3.BackColor = Color.Pink;
+            button3.Location = new Point(3, 614);
             button3.Name = "button3";
             button3.Size = new Size(96, 36);
             button3.TabIndex = 14;
@@ -184,6 +190,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightPink;
+            BackgroundImage = Properties.Resources.img4;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1097, 651);
             Controls.Add(button3);
             Controls.Add(button1);

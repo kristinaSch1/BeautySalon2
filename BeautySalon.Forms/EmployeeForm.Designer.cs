@@ -65,23 +65,24 @@
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = Color.LightPink;
+            groupBox1.BackColor = Color.Pink;
             groupBox1.Controls.Add(radioButton2);
             groupBox1.Controls.Add(radioButton1);
-            groupBox1.Location = new Point(168, 251);
+            groupBox1.Font = new Font("Segoe UI", 12F);
+            groupBox1.Location = new Point(169, 240);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(178, 100);
+            groupBox1.Size = new Size(207, 111);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             // 
             // radioButton2
             // 
             radioButton2.AutoSize = true;
-            radioButton2.Font = new Font("Mongolian Baiti", 12F);
+            radioButton2.Font = new Font("Mongolian Baiti", 14F);
             radioButton2.ForeColor = Color.DarkRed;
-            radioButton2.Location = new Point(21, 57);
+            radioButton2.Location = new Point(21, 61);
             radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(110, 25);
+            radioButton2.Size = new Size(125, 29);
             radioButton2.TabIndex = 1;
             radioButton2.TabStop = true;
             radioButton2.Text = "Available";
@@ -90,11 +91,11 @@
             // radioButton1
             // 
             radioButton1.AutoSize = true;
-            radioButton1.Font = new Font("Mongolian Baiti", 12F);
+            radioButton1.Font = new Font("Mongolian Baiti", 14F);
             radioButton1.ForeColor = Color.DarkRed;
             radioButton1.Location = new Point(21, 26);
             radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(93, 25);
+            radioButton1.Size = new Size(107, 29);
             radioButton1.TabIndex = 0;
             radioButton1.TabStop = true;
             radioButton1.Text = "Booked";
@@ -137,6 +138,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightPink;
+            BackgroundImage = Properties.Resources.Screenshot_2026_06_02_at_09_01_32_Create_rawpixel;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1123, 676);
             Controls.Add(listBox1);
             Controls.Add(button6);
@@ -144,6 +147,7 @@
             Controls.Add(groupBox1);
             Controls.Add(button2);
             Controls.Add(button1);
+            DoubleBuffered = true;
             Name = "EmployeeForm";
             Text = "EmployeeForm";
             Load += EmployeeForm_Load;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             button1 = new Button();
             button2 = new Button();
             button4 = new Button();
@@ -83,7 +84,7 @@
             // 
             // button5
             // 
-            button5.BackColor = Color.LightPink;
+            button5.BackColor = Color.Pink;
             button5.Location = new Point(1041, 616);
             button5.Name = "button5";
             button5.Size = new Size(101, 37);
@@ -201,6 +202,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightPink;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1154, 665);
             Controls.Add(button14);
             Controls.Add(button13);
@@ -214,6 +217,7 @@
             Controls.Add(button4);
             Controls.Add(button6);
             Controls.Add(button1);
+            DoubleBuffered = true;
             Name = "AdminForm";
             Text = "AdminForm";
             Load += AdminForm_Load;

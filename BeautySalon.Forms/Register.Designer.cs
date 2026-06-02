@@ -53,8 +53,10 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Mongolian Baiti", 16F);
-            label1.Location = new Point(378, 133);
+            label1.ForeColor = SystemColors.ActiveCaptionText;
+            label1.Location = new Point(151, 133);
             label1.Name = "label1";
             label1.Size = new Size(137, 29);
             label1.TabIndex = 0;
@@ -63,8 +65,10 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Mongolian Baiti", 16F);
-            label2.Location = new Point(378, 180);
+            label2.ForeColor = SystemColors.ActiveCaptionText;
+            label2.Location = new Point(151, 180);
             label2.Name = "label2";
             label2.Size = new Size(134, 29);
             label2.TabIndex = 1;
@@ -73,8 +77,10 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Mongolian Baiti", 16F);
-            label3.Location = new Point(444, 226);
+            label3.ForeColor = SystemColors.ActiveCaptionText;
+            label3.Location = new Point(217, 226);
             label3.Name = "label3";
             label3.Size = new Size(67, 29);
             label3.TabIndex = 2;
@@ -83,8 +89,10 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Mongolian Baiti", 16F);
-            label4.Location = new Point(332, 270);
+            label4.ForeColor = SystemColors.ActiveCaptionText;
+            label4.Location = new Point(105, 270);
             label4.Name = "label4";
             label4.Size = new Size(180, 29);
             label4.TabIndex = 3;
@@ -93,8 +101,10 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
             label5.Font = new Font("Mongolian Baiti", 16F);
-            label5.Location = new Point(425, 316);
+            label5.ForeColor = SystemColors.ActiveCaptionText;
+            label5.Location = new Point(198, 316);
             label5.Name = "label5";
             label5.Size = new Size(86, 29);
             label5.TabIndex = 4;
@@ -103,8 +113,10 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
             label6.Font = new Font("Mongolian Baiti", 16F);
-            label6.Location = new Point(380, 361);
+            label6.ForeColor = SystemColors.ActiveCaptionText;
+            label6.Location = new Point(153, 361);
             label6.Name = "label6";
             label6.Size = new Size(131, 29);
             label6.TabIndex = 5;
@@ -113,8 +125,10 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
             label7.Font = new Font("Mongolian Baiti", 16F);
-            label7.Location = new Point(385, 407);
+            label7.ForeColor = SystemColors.ActiveCaptionText;
+            label7.Location = new Point(158, 407);
             label7.Name = "label7";
             label7.Size = new Size(127, 29);
             label7.TabIndex = 6;
@@ -123,7 +137,7 @@
             // textBox1
             // 
             textBox1.Font = new Font("Mongolian Baiti", 13.8F);
-            textBox1.Location = new Point(531, 128);
+            textBox1.Location = new Point(304, 128);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(154, 34);
             textBox1.TabIndex = 7;
@@ -131,7 +145,7 @@
             // textBox2
             // 
             textBox2.Font = new Font("Mongolian Baiti", 13.8F);
-            textBox2.Location = new Point(531, 173);
+            textBox2.Location = new Point(304, 173);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(154, 34);
             textBox2.TabIndex = 8;
@@ -139,7 +153,7 @@
             // textBox3
             // 
             textBox3.Font = new Font("Mongolian Baiti", 13.8F);
-            textBox3.Location = new Point(531, 221);
+            textBox3.Location = new Point(304, 221);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(154, 34);
             textBox3.TabIndex = 9;
@@ -147,7 +161,7 @@
             // textBox4
             // 
             textBox4.Font = new Font("Mongolian Baiti", 13.8F);
-            textBox4.Location = new Point(531, 265);
+            textBox4.Location = new Point(304, 265);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(154, 34);
             textBox4.TabIndex = 10;
@@ -155,7 +169,7 @@
             // textBox5
             // 
             textBox5.Font = new Font("Mongolian Baiti", 13.8F);
-            textBox5.Location = new Point(531, 311);
+            textBox5.Location = new Point(304, 311);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(154, 34);
             textBox5.TabIndex = 11;
@@ -163,7 +177,7 @@
             // textBox6
             // 
             textBox6.Font = new Font("Mongolian Baiti", 13.8F);
-            textBox6.Location = new Point(531, 356);
+            textBox6.Location = new Point(304, 356);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(154, 34);
             textBox6.TabIndex = 12;
@@ -171,7 +185,7 @@
             // textBox7
             // 
             textBox7.Font = new Font("Mongolian Baiti", 13.8F);
-            textBox7.Location = new Point(531, 402);
+            textBox7.Location = new Point(304, 402);
             textBox7.Name = "textBox7";
             textBox7.PasswordChar = '*';
             textBox7.Size = new Size(154, 34);
@@ -179,10 +193,10 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.PaleVioletRed;
+            button1.BackColor = Color.LightPink;
             button1.Font = new Font("Mongolian Baiti", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(476, 531);
+            button1.ForeColor = SystemColors.ActiveCaptionText;
+            button1.Location = new Point(236, 519);
             button1.Name = "button1";
             button1.Size = new Size(161, 54);
             button1.TabIndex = 14;
@@ -193,8 +207,10 @@
             // label8
             // 
             label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
             label8.Font = new Font("Mongolian Baiti", 16F);
-            label8.Location = new Point(387, 452);
+            label8.ForeColor = SystemColors.ActiveCaptionText;
+            label8.Location = new Point(160, 452);
             label8.Name = "label8";
             label8.Size = new Size(124, 29);
             label8.TabIndex = 15;
@@ -205,7 +221,7 @@
             comboBox1.Font = new Font("Mongolian Baiti", 13.8F);
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Makeup artist", "Nail tech", "Hair stylist" });
-            comboBox1.Location = new Point(531, 449);
+            comboBox1.Location = new Point(304, 449);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(154, 32);
             comboBox1.TabIndex = 16;
@@ -224,7 +240,7 @@
             // textBox8
             // 
             textBox8.Font = new Font("Mongolian Baiti", 13.8F);
-            textBox8.Location = new Point(531, 79);
+            textBox8.Location = new Point(304, 79);
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(154, 34);
             textBox8.TabIndex = 19;
@@ -233,8 +249,10 @@
             // label9
             // 
             label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
             label9.Font = new Font("Mongolian Baiti", 16F);
-            label9.Location = new Point(463, 84);
+            label9.ForeColor = SystemColors.ActiveCaptionText;
+            label9.Location = new Point(236, 84);
             label9.Name = "label9";
             label9.Size = new Size(44, 29);
             label9.TabIndex = 18;
@@ -246,6 +264,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightPink;
+            BackgroundImage = Properties.Resources.img1;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1145, 657);
             Controls.Add(textBox8);
             Controls.Add(label9);

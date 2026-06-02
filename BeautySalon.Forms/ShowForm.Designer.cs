@@ -57,10 +57,10 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.LightPink;
-            button2.Location = new Point(1006, 621);
+            button2.BackColor = Color.Pink;
+            button2.Location = new Point(1038, 618);
             button2.Name = "button2";
-            button2.Size = new Size(94, 29);
+            button2.Size = new Size(94, 35);
             button2.TabIndex = 2;
             button2.Text = "exit";
             button2.UseVisualStyleBackColor = false;
@@ -71,10 +71,13 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightPink;
+            BackgroundImage = Properties.Resources.Screenshot_2026_06_02_at_09_01_32_Create_rawpixel;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1144, 665);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(richTextBox1);
+            DoubleBuffered = true;
             Name = "ShowForm";
             Text = "ShowForm";
             ResumeLayout(false);

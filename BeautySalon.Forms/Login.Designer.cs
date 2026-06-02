@@ -41,7 +41,7 @@
             button1.BackColor = Color.PaleVioletRed;
             button1.Font = new Font("Mongolian Baiti", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(496, 314);
+            button1.Location = new Point(238, 357);
             button1.Name = "button1";
             button1.Size = new Size(133, 52);
             button1.TabIndex = 0;
@@ -52,7 +52,7 @@
             // textBox1
             // 
             textBox1.Font = new Font("Mongolian Baiti", 13.8F);
-            textBox1.Location = new Point(526, 181);
+            textBox1.Location = new Point(268, 224);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(196, 34);
             textBox1.TabIndex = 1;
@@ -60,7 +60,7 @@
             // textBox2
             // 
             textBox2.Font = new Font("Mongolian Baiti", 13.8F);
-            textBox2.Location = new Point(526, 233);
+            textBox2.Location = new Point(268, 276);
             textBox2.Name = "textBox2";
             textBox2.PasswordChar = '*';
             textBox2.Size = new Size(196, 34);
@@ -69,8 +69,9 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Mongolian Baiti", 16F);
-            label1.Location = new Point(377, 181);
+            label1.Location = new Point(119, 224);
             label1.Name = "label1";
             label1.Size = new Size(131, 29);
             label1.TabIndex = 3;
@@ -79,8 +80,9 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Mongolian Baiti", 16F);
-            label2.Location = new Point(381, 233);
+            label2.Location = new Point(123, 276);
             label2.Name = "label2";
             label2.Size = new Size(127, 29);
             label2.TabIndex = 4;
@@ -88,8 +90,8 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.LightPink;
-            button2.Location = new Point(1069, 641);
+            button2.BackColor = Color.Pink;
+            button2.Location = new Point(12, 641);
             button2.Name = "button2";
             button2.Size = new Size(103, 38);
             button2.TabIndex = 5;
@@ -101,7 +103,9 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LightPink;
+            BackColor = Color.LightSalmon;
+            BackgroundImage = Properties.Resources.img1;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1184, 691);
             Controls.Add(button2);
             Controls.Add(label2);
