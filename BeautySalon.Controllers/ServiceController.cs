@@ -77,7 +77,7 @@ namespace BeautySalon.Controllers
         public async Task<List<Service>> GetServicesByCategory(CategoryType cat)
         {
             if (context.Services.Count() == 0)
-                throw new ArgumentException("No services in this category!");
+                throw new ArgumentException("No services!");
 
             List<Service> services = await context.Services
                 .Where(x => x.Category == cat)

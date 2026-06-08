@@ -36,6 +36,7 @@
             button5 = new Button();
             button6 = new Button();
             listBox1 = new ListBox();
+            button7 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -43,7 +44,7 @@
             button1.BackColor = Color.PaleVioletRed;
             button1.Font = new Font("Mongolian Baiti", 12F);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(183, 107);
+            button1.Location = new Point(95, 183);
             button1.Name = "button1";
             button1.Size = new Size(142, 50);
             button1.TabIndex = 0;
@@ -72,7 +73,7 @@
             button3.BackColor = Color.PaleVioletRed;
             button3.Font = new Font("Mongolian Baiti", 12F);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(183, 200);
+            button3.Location = new Point(95, 276);
             button3.Name = "button3";
             button3.Size = new Size(142, 50);
             button3.TabIndex = 2;
@@ -85,7 +86,7 @@
             button4.BackColor = Color.PaleVioletRed;
             button4.Font = new Font("Mongolian Baiti", 12F);
             button4.ForeColor = Color.White;
-            button4.Location = new Point(183, 280);
+            button4.Location = new Point(95, 356);
             button4.Name = "button4";
             button4.Size = new Size(142, 50);
             button4.TabIndex = 3;
@@ -98,7 +99,7 @@
             button5.BackColor = Color.PaleVioletRed;
             button5.Font = new Font("Mongolian Baiti", 12F);
             button5.ForeColor = Color.White;
-            button5.Location = new Point(183, 366);
+            button5.Location = new Point(273, 183);
             button5.Name = "button5";
             button5.Size = new Size(142, 50);
             button5.TabIndex = 4;
@@ -111,7 +112,7 @@
             button6.BackColor = Color.PaleVioletRed;
             button6.Font = new Font("Mongolian Baiti", 12F);
             button6.ForeColor = Color.White;
-            button6.Location = new Point(183, 450);
+            button6.Location = new Point(273, 276);
             button6.Name = "button6";
             button6.Size = new Size(142, 50);
             button6.TabIndex = 6;
@@ -124,12 +125,25 @@
             listBox1.Font = new Font("Segoe UI", 12F);
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 28;
-            listBox1.Location = new Point(572, 89);
+            listBox1.Location = new Point(547, 78);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(360, 452);
+            listBox1.Size = new Size(410, 452);
             listBox1.TabIndex = 7;
             listBox1.Visible = false;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            // 
+            // button7
+            // 
+            button7.BackColor = Color.PaleVioletRed;
+            button7.Font = new Font("Mongolian Baiti", 12F);
+            button7.ForeColor = Color.White;
+            button7.Location = new Point(273, 356);
+            button7.Name = "button7";
+            button7.Size = new Size(142, 50);
+            button7.TabIndex = 8;
+            button7.Text = "Get total price";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // ClientForm
             // 
@@ -139,6 +153,7 @@
             BackgroundImage = Properties.Resources.Screenshot_2026_06_02_at_09_01_32_Create_rawpixel;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1068, 620);
+            Controls.Add(button7);
             Controls.Add(listBox1);
             Controls.Add(button6);
             Controls.Add(button5);
@@ -162,5 +177,6 @@
         private Button button5;
         private Button button6;
         private ListBox listBox1;
+        private Button button7;
     }
 }

@@ -27,9 +27,10 @@ namespace BeautySalon.Controllers
                 throw new ArgumentException("This account already exists!");
             if (client.Age < 17)
                 throw new ArgumentException("You must be over 16 to make an account!");
-            if (client.PhoneNumber.Any(x => !char.IsDigit(x)))
+            if (client.PhoneNumber.Any(x => !char.IsDigit(x)) 
+                || client.PhoneNumber.Length != 10 || !client.PhoneNumber.StartsWith('0'))
                 throw new ArgumentException("Invalid phone number!");
-            if (!client.Email.Contains('@'))
+            if (!client.Email.Contains('@') || !client.Email.Contains('.'))
                 throw new ArgumentException("Invalid email!");
 
             List<string> emails = context.Clients.Select(x => x.Email).ToList();
@@ -42,11 +43,14 @@ namespace BeautySalon.Controllers
                 throw new ArgumentException("There is already an account using this phone number!");
             context.Users.Add(user);
             context.Clients.Add(client);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
         public async Task<Client> GetClientByUsername(string username)
         {
-            Client c = await context.Clients.FirstOrDefaultAsync(x => x.Username == username);
+            if (!context.Clients.Any(x => x.Username == username))
+                throw new ArgumentException("No client with the given username!");
+
+            Client c = await context.Clients.FirstAsync(x => x.Username == username);
             return c;
         }
 

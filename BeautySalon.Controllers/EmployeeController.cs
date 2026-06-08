@@ -29,9 +29,10 @@ namespace BeautySalon.Controllers
                 throw new ArgumentException("This account already exists!");
             if (emp.Age < 17)
                 throw new ArgumentException("You must be over 16 to make an account!");
-            if (emp.PhoneNumber.Any(x => !char.IsDigit(x)))
+            if (emp.PhoneNumber.Any(x => !char.IsDigit(x)) 
+                || emp.PhoneNumber.Length != 10 || !emp.PhoneNumber.StartsWith('0'))
                 throw new ArgumentException("Invalid phonenumber!");
-            if (!emp.Email.Contains('@'))
+            if (!emp.Email.Contains('@') || !emp.Email.Contains('.'))
                 throw new ArgumentException("Invalid email!");
             List<string> emails = context.Clients.Select(x => x.Email).ToList();
             emails.AddRange(context.Employees.Select(x => x.Email).ToList());
@@ -44,12 +45,16 @@ namespace BeautySalon.Controllers
 
             context.Users.Add(user);
             context.Employees.Add(emp);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
 
         public async Task<Employee> GetEmployeeByUsername(string username)
         {
-            return context.Employees.FirstOrDefault(x => x.Username == username);
+            if (!context.Employees.Any(x => x.Username == username))
+                throw new ArgumentException("No employee with the given username!");
+
+            Employee emp = await context.Employees.FirstAsync(x => x.Username == username);
+            return emp;
         }
 
         public async Task<List<Employee>> GetEmployees()
@@ -154,9 +159,10 @@ namespace BeautySalon.Controllers
                 throw new ArgumentException("This account already exists!");
             if (e.Age < 17)
                 throw new ArgumentException("You must be over 16 to make an account!");
-            if (e.PhoneNumber.Any(x => !char.IsDigit(x)))
+            if (e.PhoneNumber.Any(x => !char.IsDigit(x)) || e.PhoneNumber.Length != 10
+                || !e.PhoneNumber.StartsWith('0'))
                 throw new ArgumentException("Invalid phone number!");
-            if (!e.Email.Contains('@'))
+            if (!e.Email.Contains('@') || !e.Email.Contains('.'))
                 throw new ArgumentException("Invalid email!");
             List<string> emails = context.Clients.Select(x => x.Email).ToList();
             emails.AddRange(context.Employees.Select(x => x.Email).ToList());

@@ -43,8 +43,12 @@ namespace BeautySalon.Forms
                         foreach (Employee emp in emps)
                         {
                             richTextBox1.Text += $"{emp.Id}. {emp.FirstName} {emp.LastName} - " +
-                                $"{emp.Specialty.ToString()}, {emp.Age}, {emp.PhoneNumber}," +
-                                $" {emp.Email}, {emp.Username} \n";
+                                $"{emp.Specialty.ToString()} " +
+                                $"\nAge: {emp.Age}" +
+                                $"\nPhone number: {emp.PhoneNumber} " +
+                                $"\nEmail: {emp.Email}" +
+                                $"\nUsername: {emp.Username} \n";
+                            richTextBox1.Text += Environment.NewLine;
                         }
                     }
                     else if (Sender == "ClientForm")
@@ -52,8 +56,10 @@ namespace BeautySalon.Forms
                         foreach (Employee emp in emps)
                         {
                             richTextBox1.Text += $"{emp.FirstName} {emp.LastName} - " +
-                                $"{emp.Specialty.ToString()}; {emp.PhoneNumber}, " +
-                                $"{emp.Email} \n";
+                                $"{emp.Specialty.ToString()} " +
+                                $"\nPhone number: {emp.PhoneNumber} " +
+                                $"\nEmail: {emp.Email} \n";
+                            richTextBox1.Text += Environment.NewLine;
                         }
                     }
                 }
@@ -62,8 +68,12 @@ namespace BeautySalon.Forms
                     List<Client> clients = await clientController.GetClients();
                     foreach (Client c in clients)
                     {
-                        richTextBox1.Text += $"{c.Id}. {c.FirstName} {c.LastName}, " +
-                            $"{c.PhoneNumber}, {c.Email}, {c.Username}, {c.Age} \n";
+                        richTextBox1.Text += $"{c.Id}. {c.FirstName} {c.LastName}" +
+                            $"\nPhone number: {c.PhoneNumber}" +
+                            $"\nEmail: {c.Email}" +
+                            $"\nAge: {c.Age}" +
+                            $"\nUsername: {c.Username} \n";
+                        richTextBox1.Text += Environment.NewLine;
                     }
                 }
                 else if(Text == "Services")
@@ -73,8 +83,12 @@ namespace BeautySalon.Forms
                         List<Service> services = await serviceController.GetServices();
                         foreach (Service s in services)
                         {
-                            richTextBox1.Text += $"{s.Id}. {s.Name} - {s.Description}, Price: {s.Price}, " +
-                                $"Duration: {s.Duration}, Category: {s.Category.ToString()} \n";
+                            richTextBox1.Text += $"{s.Id}. {s.Name} - {s.Description}" +
+                                $"\nPrice: {s.Price}€" +
+                                $"\nDuration: {s.Duration}h" +
+                                $"\nCategory: {s.Category.ToString()} \n";
+
+                            richTextBox1.Text += Environment.NewLine;
                         }
                     }
                     else if(Sender == "ClientForm")
@@ -82,8 +96,11 @@ namespace BeautySalon.Forms
                         List<Service> services = await serviceController.GetServices();
                         foreach (Service s in services)
                         {
-                            richTextBox1.Text += $"{s.Name} - {s.Description}, Price: {s.Price}, " +
-                                $"Duration: {s.Duration}, Category: {s.Category.ToString()} \n";
+                            richTextBox1.Text += $"{s.Name} - {s.Description}" +
+                                $"\nPrice: {s.Price}€" +
+                                $"\nDuration: {s.Duration}h" +
+                                $"\nCategory: {s.Category.ToString()} \n";
+                            richTextBox1.Text += Environment.NewLine;
                         }
                     }
                 }
@@ -91,11 +108,13 @@ namespace BeautySalon.Forms
                 {
                     List<Appointment> apps = await appointmentController
                         .GetAppointments();
-                    foreach(Appointment app in apps)
+                    foreach(Appointment app in apps.OrderBy(x => x.Time))
                     {
-                        richTextBox1.Text += $"Employee: {app.Employee.FirstName}, " +
-                            $"Client: {app.Client.FirstName}, Service: " +
-                            $"{app.Service.Name}, Time: {app.Time} \n";
+                        richTextBox1.Text += $"Time: {app.Time.ToString("dd/MM HH:mm")}" +
+                            $"\nEmployee: {app.Employee.FirstName}" +
+                            $"\nClient: {app.Client.FirstName}" +
+                            $"\nService: {app.Service.Name} \n";
+                        richTextBox1.Text += Environment.NewLine;
                     }
                 }
             }

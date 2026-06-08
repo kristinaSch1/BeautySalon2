@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -83,11 +84,11 @@ namespace BeautySalon.Controllers
         public async Task<List<int>> GetAvailabelAppointmentsForEmployee
             (int empId, DateTime date)
         {
-            List<Appointment> apps = context.Appointments
+            List<Appointment> apps = await context.Appointments
                 .Include(x => x.Service)
                 .Where(x => x.EmployeeId == empId && x.Time.Year == date.Year 
                 && x.Time.Month == date.Month && x.Time.Day == date.Day)
-                .ToList();
+                .ToListAsync();
             List<int> unavailable = new List<int>();
             for (int i = 0; i < apps.Count; i++)
             {
@@ -133,6 +134,26 @@ namespace BeautySalon.Controllers
             }
 
             return available;
+        }
+
+        public async Task<decimal> GetTotalPriceForClient(int cId)
+        {
+            if (cId < 0)
+                throw new ArgumentException("Id is always a positive number!");
+
+            if (!context.Clients.Any(x => x.Id == cId))
+                throw new ArgumentException("No client with the given id!");
+
+            List<Appointment> apps = await context.Appointments
+                .Include(x => x.Service)
+                .Where(x => x.ClientId == cId)
+                .ToListAsync();
+
+            if (apps.Count == 0)
+                throw new ArgumentException("No appointments!");
+
+            decimal sum = apps.Sum(x => x.Service.Price);
+            return sum;
         }
     }
 }

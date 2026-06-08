@@ -69,9 +69,10 @@ namespace BeautySalon.Forms
                         .GetAppointmentsForClient(Client.Id);
                 foreach (Appointment app in apps.OrderBy(x => x.Time))
                 {
-                    listBox1.Items.Add($"{app.Time}, {app.Service.Name} by {app.Employee.FirstName}");
+                    listBox1.Items.Add($"{app.Service.Name} by {app.Employee.FirstName}" +
+                        $" - {app.Time.ToString("dd/MM HH:mm")}");
+                    listBox1.Items.Add(Environment.NewLine);
                 }
-
                 listBox1.Visible = true;
             }
             catch (Exception ex)
@@ -117,6 +118,20 @@ namespace BeautySalon.Forms
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private async void button7_Click(object sender, EventArgs e)
+        {
+            AppointmentController appointmentController = new AppointmentController();
+            try
+            {
+                decimal sum = await appointmentController.GetTotalPriceForClient(Client.Id);
+                MessageBox.Show($"Total price: {sum}€");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

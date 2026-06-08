@@ -30,7 +30,7 @@ namespace BeautySalon.Controllers
             if (context.Users.Any(x => x.Username == user.Username))
                 throw new ArgumentException("This account already exists!");
             context.Users.Add(user);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
         public async Task<User> GetUserByUsername(string username, string password)
         {
@@ -39,7 +39,10 @@ namespace BeautySalon.Controllers
             if (context.Users.First(x => x.Username == username).Password != password)
                 throw new ArgumentException("Wrong username or password!");
 
-            return context.Users.FirstOrDefault((x => x.Username == username && x.Password == password));
+            User u = await context.Users
+                .FirstAsync(x => x.Username == username && x.Password == password);
+
+            return u;
         }
     }
 }
